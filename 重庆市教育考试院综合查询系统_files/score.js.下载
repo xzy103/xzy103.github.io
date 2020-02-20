@@ -1,0 +1,97 @@
+$(document).ready(function () {
+    watermark();
+    $(".navigation").load('/menu/nav.htmls?rnd=' + Math.random(), function () {
+        $("#cj").addClass("menu-active").siblings("a").removeClass("menu-active");
+    });
+    //nav function;
+    $(document).on("mouseenter", "#toggle", function () {
+        $("#toggle").addClass("on");
+    });
+    $(document).on("mouseleave", "#menu", function () {
+        $("#toggle").removeClass("on");
+    });
+    $(document).on("click", "#toggle", function (event) {
+        event.preventDefault();
+        if (!$("#toggle").hasClass("on")) {
+            $("#toggle").addClass("on");
+        } else {
+            $("#toggle").removeClass("on");
+        }
+    });
+    var kshGet=$("#ksh").text();
+    if(kshGet==null||kshGet==""){
+    	return false;
+    }
+    $.ajax({
+        data: {},
+        type: "GET",
+        cache: false,
+        url: "showCj.htmls?ksh="+kshGet+"&rnd="+Math.random(),
+        dataType: "json",
+        async: false,
+        success: function (data) {
+            var path = $("#contextPathValue").val();
+            var cqzkdiv = $("<div></div>").addClass("app__report no-print").attr("id", "cqzk_div");
+            var cqzkdivpa1 = $("<a></a>").attr("href", "http://www.cqksy.cn").attr("target", "_blank").append("重庆市教育考试院官方网站");
+            var cqzkdivpa2 = $("<a></a>").attr("href", "http://www.cqzk.com.cn").attr("target", "_blank").append("重庆招考信息网");
+            var cqzkdivp = $("<p></p>").append("更多信息请关注：").append(cqzkdivpa1).append("&emsp;").append(cqzkdivpa2);
+            var cqzkqrcodediv = $("<div></div>").addClass("bottom-qrcode").append("<img src=\"" + path + "\/img\/qrcode.jpg\" alt=\"ad\" />").append("<span>普通高考综合服务平台</span>");
+            var cqzkqrcodediv1 = $("<div></div>").addClass("bottom-qrcode").append("<img src=\"" + path + "\/img\/qrcode_sjb.png\" alt=\"ad\" />").append("<span>重庆招考微信公众号</span>");
+            cqzkdiv.append(cqzkdivp).append(cqzkqrcodediv).append(cqzkqrcodediv1);
+            /*if (data.gradeList == null || data.gradeList == "") {*/
+            if (data == null || data.gradeList == null || data.gradeList == "") {
+                var nocjdiv = $("<div></div>").addClass("alert-msg").append($("<strong></strong>").append("暂无成绩信息。"));
+                $("#cj_div").append(nocjdiv);
+            } else {
+                var cjdivtitle = $("<div></div>").addClass("app__report");
+                var ispmtitile = false;
+                $.each(data.gradeList, function (idxcj, cjListDetail) {
+                    if (cjListDetail.pm != null && cjListDetail.pm != '' && cjListDetail.pm != 'null' && cjListDetail.pm != '0') {
+                        ispmtitile = true;
+                    }
+                    if (idxcj == 0) {
+                        cjdivtitle.append($("<div></div>").addClass("app__report-name").append("科目"));
+                        cjdivtitle.append($("<div></div>").addClass("app__report-name").append("分数"));
+                    }
+                    if (idxcj == data.gradeList.length - 1 && ispmtitile) {
+                        cjdivtitle.append($("<div></div>").addClass("app__report-name").append("排名"));
+                    }
+                });
+                $.each(data.gradeList, function (idxcj, cjListDetail) {
+                    var cjdiv = $("<div></div>").addClass("app__report")
+                        .append($("<span></span>").addClass("app__report-name").append(cjListDetail.cjxmc))
+                        .append($("<span></span>").addClass("app__report-name").append($("<label></label>").append(cjListDetail.cj)));
+                    if (cjListDetail.pm == '0') {
+                        cjListDetail.pm = '';
+                    }
+                    if (ispmtitile) {
+                        cjdiv.append($("<span></span>").addClass("app__report-name").append(cjListDetail.pm));
+                    }
+                    $("#cj_div").append(cjdiv);
+                });
+                cjdivtitle.prependTo($("#cj_div"));
+                $("#cj_div").append(cqzkdiv);
+                $("#cj_div").append($("<div></div>").append($("<button></button>").addClass("printButton Button btn-padding no-print").append("打印")));
+            }
+            $(".qrcode").qrcode(data.qrcode);
+        },error: function (data) {
+            var nocjdiv = $("<div></div>").addClass("alert-msg").append($("<strong></strong>").append("暂无成绩信息!"));
+            $("#cj_div").append(nocjdiv);
+        }
+    });
+
+}), $(document).on("click", ".app__logout", function (b) {
+    if (!a) {
+        //window.location.href="http://www.cqzk.com.cn:90";
+        location.reload(true);
+        $(".ripple").remove(), a = !0;
+        var c = this;
+        $(c).addClass("clicked"), setTimeout(function () {
+            f.removeClass("active"), e.show(), e.css("top"), e.removeClass("inactive")
+        }, d - 120), setTimeout(function () {
+            f.hide(), a = !1, $(c).removeClass("clicked")
+        }, d)
+    }
+}), $(document).on("click", ".printButton", function (b) {
+	window.print();
+});

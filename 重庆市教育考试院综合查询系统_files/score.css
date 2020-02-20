@@ -1,0 +1,297 @@
+.app__reports{
+	margin-top:1rem;
+}
+.app__report{
+	border-top:1px solid #EEEEEF;
+	padding:1rem 0;
+	line-height:1;
+	text-align: center;
+}
+.app__report-name{
+	color:#666;
+	width:25%;
+	display:inline-block;
+	text-align:center;
+	vertical-align: top;
+}
+.app__report-score{
+	color:#FC3768;
+}
+.app__report p{
+	color:#999;
+	line-height:1.5;
+	margin-top:.5rem;
+	font-family:"Microsoft Yahei";
+	margin-left: 16%;
+	text-align: left;
+}
+.app__report a,.app__report a:visited,.app__report a:active{
+	color:#FC3768;
+	text-decoration:none;
+}
+.app__report a:hover{
+	color:#f00;
+}
+.app__report-ad p{
+	text-indent:2rem;
+}
+.app_weight{
+	font-weight:bold;
+}
+.app__report:nth-child(1){
+	-webkit-transition-delay:0.2s;
+	transition-delay:0.2s;
+}
+.app__report:nth-child(2){
+	-webkit-transition-delay:0.3s;
+	transition-delay:0.3s;
+}
+.app__report:nth-child(3){
+	-webkit-transition-delay:0.4s;
+	transition-delay:0.4s;
+}
+.app__report:nth-child(4){
+	-webkit-transition-delay:0.5s;
+	transition-delay:0.5s;
+}
+.app__report:nth-child(5){
+	-webkit-transition-delay:0.6s;
+	transition-delay:0.6s;
+}
+.cjfcjg_cancel_button{
+	cursor: pointer;
+	color: #FC3768;
+}
+.Button{
+	color: #fef4e9;
+    border: solid 1px #da7c0c;
+    background: #f78d1d;
+    background: -webkit-gradient(linear,left top,left bottom,from(#faa51a),to(#f47a20));
+    background: -moz-linear-gradient(top,#faa51a,#f47a20);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#faa51a',endColorstr='#f47a20');
+    display: inline-block;
+    vertical-align: baseline;
+    margin: 3px 3px;
+    outline: none;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    font: 16px/100% Arial,Helvetica,sans-serif;
+    text-shadow: 0 1px 1px rgba(0,0,0,.3);
+    -webkit-border-radius: .5em;
+    -moz-border-radius: .5em;
+    border-radius: .5em;
+    -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+    -moz-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+    box-shadow: 0 1px 2px rgba(0,0,0,.2);
+    /* float:right; */
+}
+.Button_disable{
+	color: #ccc;
+	border: solid 1px #A9A9A9;
+	background: #A9A9A9;
+	/*background: -webkit-gradient(linear,left top,left bottom,from(#faa51a),to(#f47a20));
+	background: -moz-linear-gradient(top,#faa51a,#f47a20);*/
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#faa51a',endColorstr='#f47a20');
+	display: inline-block;
+	vertical-align: baseline;
+	margin: 3px 3px;
+	outline: none;
+	cursor: pointer;
+	text-align: center;
+	text-decoration: none;
+	font: 16px/100% Arial,Helvetica,sans-serif;
+	text-shadow: 0 1px 1px rgba(0,0,0,.3);
+	-webkit-border-radius: .5em;
+	-moz-border-radius: .5em;
+	border-radius: .5em;
+	-webkit-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+	-moz-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+	box-shadow: 0 1px 2px rgba(0,0,0,.2);
+	cursor:not-allowed;
+}
+.app__reportfc{
+	overflow:auto;
+	margin:0;
+	padding:0 20px;
+}
+.app__reportfc::-webkit-scrollbar {/*������������ʽ*/
+            width: 0;     /*�߿�ֱ��Ӧ�����������ĳߴ�*/
+            height: 0;
+        }       
+.color666{
+	color:#666;
+}
+.cjfcly_input{
+	margin:0;
+	padding:0;
+	position: relative;
+	width:100%;	
+}
+.zyfz {
+	position: absolute;
+	display: block;
+	top: 6rem;
+	right: 1rem;
+	z-index: 999999999;
+	text-align: right;
+}
+.zyfz img {
+	display: inline-block;
+	width: 3.2rem;
+	height: 3.2rem;
+	float: right;
+	margin-left: 0.7rem;
+}
+.zyfz h5 {
+	color: #FFFFFF;
+}
+.qrcode {
+	position: absolute;
+	display: block;
+	width: 100px;
+	height: 100px;
+	left:1rem;
+	top: -60px;
+}
+.qrcode canvas {
+	display: block;
+	width: 100px;
+	height: 100px;
+}
+.info {
+	border: 1px solid #EEE;
+	background-color: #F8F8F8;
+	font-size: 16px;
+	text-align: center;
+	padding: 4px 0px;
+	margin-bottom: 20px;
+}
+.msg {
+	position: absolute;
+	display: block;
+	top: -50px;
+	left: 3.8rem;
+}
+.bottom-qrcode {
+	display: inline-block;
+	width: 4rem;
+	margin: 15px 10px;
+	text-align: center;
+}
+.bottom-qrcode img {
+	display: block;
+	width: 4rem;
+	height: 4rem;
+	margin: 0px auto 5px;
+}
+.login__submit {
+	position: relative;
+	left:25%;
+	width: 50%;
+	height: 2rem;
+	margin: 2rem auto;
+	color: rgba(255, 255, 255, 0.8);
+	background: #FF3366;
+	font-size: 1rem;
+	border-radius: 3rem;
+	cursor: pointer;
+	overflow: hidden;
+	-webkit-transition: width 0.3s 0.15s, font-size 0.1s 0.15s;
+	transition: width 0.3s 0.15s, font-size 0.1s 0.15s;
+}
+.login__input.code {
+	width: 12rem;
+}
+.login__submit:hover {
+	background-color: #FB2857;
+}
+.login__submit:after {
+	content: "";
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-left: -1.5rem;
+	margin-top: -1.5rem;
+	width: 3rem;
+	height: 3rem;
+	border: 2px dotted #fff;
+	border-radius: 50%;
+	border-left: none;
+	border-bottom: none;
+	-webkit-transition: opacity 0.1s 0.4s;
+	transition: opacity 0.1s 0.4s;
+	opacity: 0;
+}
+.login__submit.processing {
+	width: 4rem;
+	font-size: 0;
+}
+.login__submit.processing:after {
+	opacity: 1;
+	-webkit-animation: rotate 0.5s 0.4s infinite linear;
+	animation: rotate 0.5s 0.4s infinite linear;
+}
+.login__submit.success {
+	-webkit-transition: opacity 0.1s 0.3s, background-color 0.1s 0.3s,
+		-webkit-transform 0.3s 0.1s ease-out;
+	transition: opacity 0.1s 0.3s, background-color 0.1s 0.3s,
+		-webkit-transform 0.3s 0.1s ease-out;
+	transition: transform 0.3s 0.1s ease-out, opacity 0.1s 0.3s,
+		background-color 0.1s 0.3s;
+	transition: transform 0.3s 0.1s ease-out, opacity 0.1s 0.3s,
+		background-color 0.1s 0.3s, -webkit-transform 0.3s 0.1s ease-out;
+	-webkit-transform: scale(30);
+	transform: scale(30);
+	opacity: 0.9;
+}
+.login__submit.success:after {
+	-webkit-transition: opacity 0.1s 0s;
+	transition: opacity 0.1s 0s;
+	opacity: 0;
+	-webkit-animation: none;
+	animation: none;
+}
+.comment {
+	display: inline-block;
+	width: 50%;
+	vertical-align: top;
+	word-wrap:break-word;
+	white-space:pre-wrap;
+}
+
+.cjfc_commit_button,.cjfc_cancel_button,.cjfcjg_cancel_button{
+	    float:right;
+	}
+
+@media only screen and (max-width:767px){
+	html{
+		background:#fff;
+	}		
+	.cjfc_commit_button,.cjfc_cancel_button,.cjfcjg_cancel_button{
+	    padding: .2em .3em;
+	    font-size: .6rem;
+	}
+	.app__report{
+	  	font-size:.8rem;
+	  	padding:.3rem .2rem;
+	}
+	.app__report p{
+	  	font-size:.6rem;
+	  	margin:0;
+	}
+	.alert-msg{
+		font-size: .6rem;
+	}
+}
+
+@media only screen (min-width:768px){
+	.btn-padding{
+		padding:5px;
+		margin: 0 auto;
+	}
+}
+
+textarea{
+	height:60px;
+}

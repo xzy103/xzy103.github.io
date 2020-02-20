@@ -1,0 +1,12 @@
+$(function() {
+	//loading change
+	$(".load-wrap").hide();
+	$(".muck-up").css('display', 'block'); 
+	/*
+	$(".navigation").load('/nav.html');
+	*/
+	
+}); 
+
+
+
